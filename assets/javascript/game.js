@@ -14,12 +14,18 @@ let docUnderScore = document.getElementsByClassName('underscore');
 let docRightGuess = document.getElementsByClassName('rightGuess');
 let docWrongGuess = document.getElementsByClassName('wrongGuess');
 
-//Need to add parameters for characters to check if its in rightWord or wrongWord 
+//Need to add parameters for characters to check if its in rightWord or wrongWord & fix duel character instances for yellow and chartreuse
 
 //Add score keeper
-
+// var wins= document.getElementById('wins').innerHTML;
+// var losses= document.getElementById('losses'.innerHTML);
+//var letterGuessed = [];
+//var guessesRemaining = document.getElementsByClassName('guessesRemaining').innerHTML;
 
 //Add sounds for win and loss
+
+
+//How do you make the game reset??????????????????????????????????
 
 
 // Main
