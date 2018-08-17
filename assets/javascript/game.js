@@ -14,6 +14,12 @@ let docUnderScore = document.getElementsByClassName('underscore');
 let docRightGuess = document.getElementsByClassName('rightGuess');
 let docWrongGuess = document.getElementsByClassName('wrongGuess');
 
+//Need to add parameters for characters to check if its in rightWord or wrongWord 
+
+//Add score keeper
+
+
+//Add sounds for win and loss
 
 
 // Main
@@ -22,7 +28,7 @@ console.log(chosenWord);
 // Create underscores based on length of word
 let generateUnderscore =  () => {
     for(let i = 0; i < chosenWord.length; i++) {
-        underScore.push('_');
+        underScore.push(' _ ');
         
     }
     return underScore;
@@ -51,6 +57,4 @@ document.addEventListener('keypress', (event) => {
     }    
 });
 docUnderScore[0].innerHTML = generateUnderscore().join('');
-// Check if guess is right
-// If right push to right array
-// If wrong push to wrong array
+
