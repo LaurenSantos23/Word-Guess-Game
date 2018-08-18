@@ -14,6 +14,8 @@ let docUnderScore = document.getElementsByClassName('underscore');
 let docRightGuess = document.getElementsByClassName('rightGuess');
 let docWrongGuess = document.getElementsByClassName('wrongGuess');
 
+let wins = document.getElementById("winCounter");
+
 //Need to add parameters for characters to check if its in rightWord or wrongWord & fix duel character instances for yellow and chartreuse
 
 //Add score keeper
@@ -23,6 +25,7 @@ let docWrongGuess = document.getElementsByClassName('wrongGuess');
 //var guessesRemaining = document.getElementsByClassName('guessesRemaining').innerHTML;
 
 //Add sounds for win and loss
+
 
 
 //How do you make the game reset??????????????????????????????????
@@ -50,8 +53,8 @@ document.addEventListener('keypress', (event) => {
         rightWord.push(keyword);
     // replace underscore with right letter
         underScore[chosenWord.indexOf(keyword)] = keyword;
-        docUnderScore[0].innerHTML = underScore.join('');
-        docRightGuess[0].innerHTML = rightWord;
+        docUnderScore[0].textContent = underScore.join('');
+        docRightGuess[0].textContent = rightWord;
     // checks to see if user word matches guesses //may not need comma after chosenWord next line
          if(underScore.join('') == chosenWord) {
                     alert('You Win!');
@@ -59,8 +62,8 @@ document.addEventListener('keypress', (event) => {
     }
     else {
         wrongWord.push(keyword);
-        docWrongGuess[0].innerHTML = wrongWord;
+        docWrongGuess[0].textContent = wrongWord;
     }    
 });
-docUnderScore[0].innerHTML = generateUnderscore().join('');
+docUnderScore[0].textContent = generateUnderscore().join('');
 
