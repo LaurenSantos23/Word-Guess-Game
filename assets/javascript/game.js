@@ -8,6 +8,7 @@ let chosenWord = word[randNum];
 let rightWord = [];
 let wrongWord = [];
 let underScore = [];
+var score = 0;
 
 //DOM Stuff
 let docUnderScore = document.getElementsByClassName('underscore');
@@ -16,10 +17,8 @@ let docWrongGuess = document.getElementsByClassName('wrongGuess');
  
 let wins = document.getElementById("winCounter");
 
-//Need to add parameters for characters to check if its in rightWord or wrongWord & fix duel character instances for yellow and chartreuse
-
 //Add score keeper
-// var wins= document.getElementById('wins').innerHTML;
+ 
 // var losses= document.getElementById('losses'.innerHTML);
 //var letterGuessed = [];
 //var guessesRemaining = document.getElementsByClassName('guessesRemaining').innerHTML;
@@ -52,12 +51,21 @@ document.addEventListener('keypress', (event) => {
     //  add to right words array
         rightWord.push(keyword);
     // replace underscore with right letter
-        underScore[chosenWord.indexOf(keyword)] = keyword;
+    //    underScore[chosenWord.indexOf(keyword)] = keyword;
+        for(let i=0; i < chosenWord.length; i++){
+            if(chosenWord[i] === keyword) {
+                underScore[i] = keyword;
+            }
+
+
+        }
         docUnderScore[0].textContent = underScore.join('');
         docRightGuess[0].textContent = rightWord;
     // checks to see if user word matches guesses //may not need comma after chosenWord next line
          if(underScore.join('') == chosenWord) {
                     alert('You Win!');
+                    score++;
+                    document.getElementById('wins').innerHTML = score;
          }
     }
     else {
