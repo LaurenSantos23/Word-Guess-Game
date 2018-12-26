@@ -8,6 +8,9 @@ let chosenWord = word[randNum];
 let rightWord = [];
 let wrongWord = [];
 let underScore = [];
+// need to write code for guessesLeft and totalGuesses
+let guessesLeft = 0;
+let totalGuesses = 0;
 var score = 0;
 
 //DOM Stuff
