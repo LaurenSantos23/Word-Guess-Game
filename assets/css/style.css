@@ -2,6 +2,19 @@ body{
     background-image: url("../images/Tie-Dye.jpg");
 }
 
+.container {
+    position: absolute;
+    top: 25px;
+    left: 50px;
+    right: 50px;
+    bottom: 200px;
+}
+
+.h1-text{
+    font-size:40px;
+    text-decoration: underline;
+    font-family: 'Fira Sans', sans-serif;
+}
 
 header {
   border: 3px solid black;
@@ -10,6 +23,7 @@ header {
   margin:0px auto;
   height: 200px; 
   width:80%;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 .underscore{
@@ -19,6 +33,7 @@ header {
     margin:0px auto;
     height: 150px; 
     width:80%;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .rightGuess{
@@ -28,6 +43,7 @@ header {
     margin:0px auto;
     height: 150px; 
     width:80%;
+    font-family: 'Fira Sans', sans-serif;
 
 }
 
@@ -38,6 +54,7 @@ header {
     margin:0px auto;
     height: 150px; 
     width:80%;
+    font-family: 'Fira Sans', sans-serif;
 
 
 }
@@ -47,7 +64,8 @@ header {
     text-align:center;
     margin:0px auto;
     height: 150px; 
-    width:80%; 
+    width:80%;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 #lossCounter{
@@ -57,4 +75,5 @@ header {
     margin:0px auto;
     height: 150px; 
     width:80%;
+    font-family: 'Fira Sans', sans-serif;
 }
