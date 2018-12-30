@@ -9,14 +9,15 @@ let rightWord = [];
 let wrongWord = [];
 let underScore = [];
 // need to write code for guessesLeft and totalGuesses
-let guessesLeft = 0;
+let guessesLeft = chosenWord.length *2;
 let totalGuesses = 0;
-var score = 0;
+let win = 0;
+let loss = 0;
 
 //DOM Stuff
 let docUnderScore = document.getElementsByClassName('underscore');
-let docRightGuess = document.getElementsByClassName('rightGuess');
-let docWrongGuess = document.getElementsByClassName('wrongGuess');
+let docRightGuess = document.getElementById('rightGuess');
+let docWrongGuess = document.getElementById('wrongGuess');
  
 let wins = document.getElementById("winCounter");
 
@@ -49,6 +50,7 @@ let generateUnderscore =  () => {
 // Get users guess
 document.addEventListener('keypress', (event) => {
     let keyword = String.fromCharCode(event.keyCode);
+    guessesLeft--;
 // If user guesses right 
     if(chosenWord.indexOf(keyword) > -1) {
     //  add to right words array
@@ -63,18 +65,38 @@ document.addEventListener('keypress', (event) => {
 
         }
         docUnderScore[0].textContent = underScore.join('');
-        docRightGuess[0].textContent = rightWord;
+        docRightGuess.textContent = rightWord;
     // checks to see if user word matches guesses //may not need comma after chosenWord next line
          if(underScore.join('') == chosenWord) {
                     alert('You Win!');
-                    score++;
-                    document.getElementById('wins').innerHTML = score;
+                    win++;
+                    document.getElementById('wins').innerHTML = win;  
+                    resetGame();   
          }
     }
     else {
         wrongWord.push(keyword);
-        docWrongGuess[0].textContent = wrongWord;
-    }    
+        docWrongGuess.textContent = wrongWord;
+        if (guessesLeft < 1) {
+            loss++;
+            document.getElementById('losses').innerHTML = loss;  
+            resetGame();
+        }
+        // console.log(guessesLeft);
+    }   
 });
+
+function resetGame () {
+    // we want to reset the underscore div, rightGuesses div, wrongGuesses
+     randNum = Math.floor(Math.random()* word.length);
+     chosenWord = word[randNum];
+     underScore = [];
+     rightWord = [];
+     wrongWord = [];
+    document.getElementsByClassName('underscore')[0].textContent = generateUnderscore().join('');
+    document.getElementById('rightGuess').textContent = "";
+    document.getElementById('wrongGuess').textContent = "";
+    console.log(chosenWord);
+}
 docUnderScore[0].textContent = generateUnderscore().join('');
 
